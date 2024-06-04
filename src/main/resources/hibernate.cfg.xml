@@ -16,6 +16,6 @@
 
         <mapping class="org.spring.hiber_second.data.Customer"/>
         <mapping class="org.spring.hiber_second.data.Product"/>
-        <mapping class="org.spring.hiber_second.data.Order"/>
+<!--        <mapping class="org.spring.hiber_second.data.Order"/>-->
     </session-factory>
 </hibernate-configuration>
