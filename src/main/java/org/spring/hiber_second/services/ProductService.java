@@ -1,6 +1,7 @@
 package org.spring.hiber_second.services;
 
 import org.spring.hiber_second.data.Customer;
+import org.spring.hiber_second.data.Order;
 import org.spring.hiber_second.data.Product;
 import org.spring.hiber_second.repositories.ProductDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +19,14 @@ public class ProductService {
     }
 
     public List<Customer> getProductsCustomers(Long id) {
-        Product product = productDao.getProductById(id);
-        return product.getCustomers();
+        return productDao.getProductsCustomers(id);
     }
 
     public List<Product> getAllProducts() {
         return productDao.getAllProducts();
+    }
+
+    public List<Order> getProductOrders(Long id) {
+        return productDao.getProductsOrders(id);
     }
 }

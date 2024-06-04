@@ -1,6 +1,7 @@
 package org.spring.hiber_second.data;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
 import java.util.List;
 
 @Entity
@@ -15,7 +16,7 @@ public class Product {
     private String title;
 
     @Column(name = "price")
-    private Float price;
+    private Double price;
 
     @ManyToMany
     @JoinTable(
@@ -24,6 +25,9 @@ public class Product {
             inverseJoinColumns = @JoinColumn(name = "customer_id")
     )
     private List<Customer> customers;
+
+    @OneToMany(mappedBy = "product")
+    private List<Order> orders;
 
     public Product() {
     }
@@ -44,11 +48,11 @@ public class Product {
         this.title = title;
     }
 
-    public Float getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Float price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -58,6 +62,14 @@ public class Product {
 
     public void setCustomers(List<Customer> customers) {
         this.customers = customers;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 
     @Override

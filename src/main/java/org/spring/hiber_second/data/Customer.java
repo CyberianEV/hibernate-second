@@ -1,6 +1,6 @@
 package org.spring.hiber_second.data;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.util.List;
 
 @Entity

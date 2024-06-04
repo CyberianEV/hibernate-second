@@ -18,8 +18,7 @@ public class CustomerService {
     }
 
     public List<Product> getCustomersProducts(Long id) {
-        Customer customer = customerDao.getCustomerById(id);
-        return customer.getProducts();
+        return customerDao.getCustomersProducts(id);
     }
 
     public List<Customer> getAllCustomers() {

@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class SessionFactoryUtil {
     private SessionFactory sessionFactory;
-    private Session session;
 
     public SessionFactory getSessionFactory() {
         return sessionFactory;
@@ -29,10 +28,6 @@ public class SessionFactoryUtil {
 
     public Session getSession() {
         return sessionFactory.getCurrentSession();
-    }
-
-    public void setSession(Session session) {
-        this.session = session;
     }
 
     @PreDestroy
